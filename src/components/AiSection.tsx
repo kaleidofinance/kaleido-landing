@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 import { 
   Bot, 
   Brain, 
@@ -22,13 +23,85 @@ const AiSection = () => {
           <div className="text-center lg:text-left">
             <div className="relative inline-block">
               <div className="w-48 h-48 mx-auto lg:mx-0 relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#00dd72]/10 via-[#00dd72]/10 to-[#00ff22]/10 rounded-full blur-xl opacity-50 animate-pulse"></div>
-                <div className="absolute inset-4 bg-gradient-to-br from-[#00dd72] to-[#00ff22] rounded-full flex items-center justify-center border-4 border-black">
-                  <Bot className="w-20 h-20 text-black" />
-                </div>
-                <div className="absolute -top-4 -right-4 w-12 h-12 bg-[#00dd72] rounded-full flex items-center justify-center animate-bounce border-2 border-black">
-                  <Brain className="w-6 h-6 text-black" />
-                </div>
+                {/* Outer glow layers */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-[#00dd72] via-[#00ff22] to-[#00dd72] rounded-full blur-2xl"
+                  animate={{
+                    scale: [1, 1.2, 1],
+                    opacity: [0.4, 0.6, 0.4],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                />
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-[#00dd72]/20 via-[#00dd72]/20 to-[#00ff22]/20 rounded-full blur-xl"
+                  animate={{
+                    scale: [1, 1.15, 1],
+                    opacity: [0.5, 0.7, 0.5],
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                />
+                
+                {/* Main Bot Circle */}
+                <motion.div
+                  className="absolute inset-4 bg-gradient-to-br from-[#00dd72] to-[#00ff22] rounded-full flex items-center justify-center border-4 border-black relative z-10"
+                  animate={{
+                    boxShadow: [
+                      '0 0 20px rgba(0, 221, 114, 0.5), 0 0 40px rgba(0, 221, 114, 0.3)',
+                      '0 0 30px rgba(0, 221, 114, 0.7), 0 0 60px rgba(0, 221, 114, 0.4)',
+                      '0 0 20px rgba(0, 221, 114, 0.5), 0 0 40px rgba(0, 221, 114, 0.3)',
+                    ],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  {/* Inner glow on bot circle */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/20 blur-sm"></div>
+                  <Bot className="w-20 h-20 text-black relative z-10" />
+                </motion.div>
+                
+                {/* Small Brain Circle with enhanced glow */}
+                <motion.div
+                  className="absolute -top-4 -right-4 w-12 h-12 bg-[#00dd72] rounded-full flex items-center justify-center border-2 border-black relative z-10"
+                  animate={{
+                    scale: [1, 1.1, 1],
+                    boxShadow: [
+                      '0 0 15px rgba(0, 221, 114, 0.6), 0 0 30px rgba(0, 221, 114, 0.4)',
+                      '0 0 25px rgba(0, 221, 114, 0.8), 0 0 50px rgba(0, 221, 114, 0.5)',
+                      '0 0 15px rgba(0, 221, 114, 0.6), 0 0 30px rgba(0, 221, 114, 0.4)',
+                    ],
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  {/* Outer glow for brain circle */}
+                  <motion.div
+                    className="absolute inset-0 bg-[#00dd72] rounded-full blur-lg -z-10"
+                    animate={{
+                      scale: [1, 1.5, 1],
+                      opacity: [0.5, 0.8, 0.5],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  />
+                  <Brain className="w-6 h-6 text-black relative z-10" />
+                </motion.div>
               </div>
             </div>
           </div>
