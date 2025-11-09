@@ -2,11 +2,11 @@
 
 import { motion } from "framer-motion";
 import CardDetails from "@/components/CardDetails";
-import Discover from "@/components/Discover";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import FeatureCardGrid from "@/components/FeatureCardGrid";
 import AiSection from "@/components/AiSection";
+import DeFiEcosystem from "@/components/DeFiEcosystem";
 
 import HowToBuy from "@/components/HowToBuy";
 import MarketSection from "@/components/MarketSection";
@@ -174,7 +174,7 @@ export default function Home() {
         </div>
         <div className="px-6 flex justify-center items-center">
           <div className="xl:max-w-[1440px] w-full">
-            <Discover />
+            <DeFiEcosystem />
           </div>
         </div>
       </div>
@@ -185,7 +185,6 @@ export default function Home() {
       <FeatureCardGrid />
 
       <AiSection />
-
       
       <div className="md:max-w-[94%] m-auto">
         <div className="px-6 flex justify-center items-center">

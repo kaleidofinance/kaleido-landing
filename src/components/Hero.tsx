@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Play, Grid3x3, Brain, Network } from 'lucide-react';
 import { GlowButton } from './GlowButton';
+import { useState } from 'react';
+import DemoModal from './DemoModal';
 
 const Hero = () => {
+  const [demoOpen, setDemoOpen] = useState(false);
+
   return (
     <section id="home" className="relative pt-16 pb-20 md:pt-20 md:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background Effects - Kaleido style */}
@@ -72,11 +76,19 @@ const Hero = () => {
             Open Dapp
             <ExternalLink className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </GlowButton>
-          <GlowButton variant="outline" size="lg" className="flex items-center justify-center w-full sm:w-auto">
+          <GlowButton 
+            variant="outline" 
+            size="lg" 
+            className="flex items-center justify-center w-full sm:w-auto"
+            onClick={() => setDemoOpen(true)}
+          >
             <Play className="w-5 h-5 mr-2" />
             Watch Demo
           </GlowButton>
         </motion.div>
+
+        {/* Demo Modal */}
+        <DemoModal open={demoOpen} onOpenChange={setDemoOpen} />
 
         {/* Stats/Benefits */}
         <motion.div
