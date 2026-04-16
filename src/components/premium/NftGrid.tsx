@@ -158,7 +158,7 @@ const NftGrid: React.FC<NftGridProps> = ({ onShowNftModal, isNftEligible = false
                 <div className="p-4">
                   <h3 className="text-white font-bold text-lg mb-1">Supernode CPU {cpuNumber}</h3>
                   <p className={`${isUnlocked ? 'text-gray-400' : 'text-gray-500'} text-sm mb-3`}>
-                    {isUnlocked ? 'Premium Node Mining' : 'Coming Soon on Abstract Chain'}
+                    {isUnlocked ? 'Premium Node Mining' : 'Coming Soon on Kaleido Agentic OS'}
                   </p>
                   
                   {isUnlocked ? (
@@ -191,7 +191,7 @@ const NftGrid: React.FC<NftGridProps> = ({ onShowNftModal, isNftEligible = false
           </h3>
           <p className="text-gray-400">
             Kaleido SuperNode CPU provide exclusive benefits including mining boosts, premium node mining, and special access to upcoming platform features.
-            Building strong on Abstract Chain.
+            Building strong on Kaleido Agentic OS.
           </p>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { connectToDatabase } from '@/lib/mongodb';
 
-const ABSTRACT_POINTS = 200; // Points for RT & Comment with #KaleidoAbstract task
+const ABSTRACT_POINTS = 200; // Points for RT & Comment with #KaleidoKaleido task
 
 export async function POST(req: Request) {
   try {
@@ -27,7 +27,7 @@ export async function POST(req: Request) {
     }
 
     // Check if task already claimed
-    if (user.twitterAbstractTaskClaimed) {
+    if (user.twitterKaleidoTaskClaimed) {
       return NextResponse.json({ 
         error: 'Points already claimed',
         message: 'You have already claimed points for this task'
@@ -56,7 +56,7 @@ export async function POST(req: Request) {
         $set: { 
           balance: newBalance,
           lastUpdated: new Date().toISOString(),
-          twitterAbstractTaskClaimed: true
+          twitterKaleidoTaskClaimed: true
         }
       }
     );

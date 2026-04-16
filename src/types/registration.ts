@@ -33,7 +33,7 @@ export interface RegistrationData {
   twitterCommentTaskClaimed?: boolean;
   twitterCommentBackTaskClaimed?: boolean;
   twitterScreenshotTaskClaimed?: boolean;
-  twitterAbstractTaskClaimed?: boolean;
+  twitterKaleidoTaskClaimed?: boolean;
   twitterPartnershipTaskClaimed?: boolean;
   twitterFounderTaskClaimed?: boolean;
   twitterThreadTaskClaimed?: boolean;

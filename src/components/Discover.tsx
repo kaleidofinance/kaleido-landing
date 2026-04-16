@@ -83,7 +83,7 @@ const Discover = () => {
           <FeatureCard
             icon={Globe}
             title="Multi-Chain Support"
-            description="Deploy on Abstract, Arbitrum, Polygon, Base, and Ethereum with unified UX"
+            description="Deploy on Kaleido, Arbitrum, Polygon, Base, and Ethereum with unified UX"
           />
           <FeatureCard
             icon={Shield}

@@ -39,7 +39,7 @@ const ComingSoonModal: React.FC<ComingSoonModalProps> = ({ isOpen, onClose }) =>
         {/* Content */}
         <div className="space-y-4 text-center">
           <p className="text-gray-300 text-sm">
-            This Supernode CPU is now Live <span className="text-[#00dd72] font-bold">Abstract Chain</span>.
+            This Supernode CPU is now Live <span className="text-[#00dd72] font-bold">Kaleido Agentic OS</span>.
           </p>
           
           <div className="bg-[#131317] p-4 rounded-lg border border-white/5">

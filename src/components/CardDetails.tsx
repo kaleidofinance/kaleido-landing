@@ -27,7 +27,7 @@ const CardDetails = () => {
                 <Layers className="w-8 h-8 text-black" />
               </div>
               <h3 className="text-lg font-bold mb-2 text-white">Multi-Chain</h3>
-              <p className="text-gray-300 text-sm">Abstract, Arbitrum, Polygon, Base & Ethereum</p>
+              <p className="text-gray-300 text-sm">Kaleido, Arbitrum, Polygon, Base & Ethereum</p>
             </div>
             
             <div className="text-center">

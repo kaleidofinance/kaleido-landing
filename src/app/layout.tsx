@@ -14,8 +14,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Kaleido | Abstract Lending",
-  description: "Decentralized P2P Lending Protocol",
+  title: "Kaleido Agentic OS | The Autonomous Financial Layer",
+  description: "Experience the world's first DeFi Operating System powered by Luca AI. Deploy, Stake, and Reason with Kaleido.",
   icons: "./favicon.ico"
 };
 

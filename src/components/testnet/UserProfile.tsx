@@ -67,7 +67,7 @@ export default function UserProfile({ registrationData, onLogout }: UserProfileP
     twitterComment: false,
     twitterCommentBack: false,
     twitterScreenshot: false,
-    twitterAbstract: false,
+    twitterKaleido: false,
     twitterPartnership: false,
     twitterFounder: false,
     twitterThread: false,
@@ -202,13 +202,13 @@ export default function UserProfile({ registrationData, onLogout }: UserProfileP
     }
   };
 
-  const handleClaimAbstractPoints = async () => {
+  const handleClaimKaleidoPoints = async () => {
     if (!account) return;
     let toastId = toast.loading('Claiming points...');
     
     try {
       // Set loading state
-      setLoadingStates(prev => ({ ...prev, twitterAbstract: true }));
+      setLoadingStates(prev => ({ ...prev, twitterKaleido: true }));
 
       // Open Twitter post in new tab
       window.open('https://x.com/kaleido_finance/status/1887360760583713153', '_blank');
@@ -234,7 +234,7 @@ export default function UserProfile({ registrationData, onLogout }: UserProfileP
       }
 
       // Verify the claim was successful with retries
-      const verified = await verifyClaimWithRetries(account, 'twitterAbstractTaskClaimed');
+      const verified = await verifyClaimWithRetries(account, 'twitterKaleidoTaskClaimed');
       
       if (!verified) {
         throw new Error('Failed to verify points claim after multiple attempts');
@@ -251,7 +251,7 @@ export default function UserProfile({ registrationData, onLogout }: UserProfileP
     } finally {
       // Clear loading state
       setTimeout(() => {
-        setLoadingStates(prev => ({ ...prev, twitterAbstract: false }));
+        setLoadingStates(prev => ({ ...prev, twitterKaleido: false }));
       }, 5000);
     }
   };

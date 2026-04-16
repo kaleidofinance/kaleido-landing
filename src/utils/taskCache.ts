@@ -4,7 +4,7 @@ export type TaskType =
   | 'twitterCommentTaskClaimed'
   | 'twitterCommentBackTaskClaimed'
   | 'twitterScreenshotTaskClaimed'
-  | 'twitterAbstractTaskClaimed'
+  | 'twitterKaleidoTaskClaimed'
   | 'twitterPartnershipTaskClaimed'
   | 'twitterFounderTaskClaimed'
   | 'twitterThreadTaskClaimed'
