@@ -236,17 +236,33 @@ const DeFiEcosystem: React.FC = () => {
                 </div>
 
                 {/* Action Button with Enhanced Animation */}
-                <motion.button
-                  className="group/btn flex w-full items-center justify-between rounded-lg bg-gradient-to-r from-[#00dd72]/20 to-[#00dd72]/10 px-4 py-3 text-white transition-all duration-200 hover:from-[#00dd72]/30 hover:to-[#00dd72]/20 border border-[#00dd72]/30 hover:shadow-lg hover:shadow-[#00dd72]/30"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={() => openComingSoon(opportunity.title)}
-                >
-                  <span className="font-semibold transition-all duration-200 group-hover/btn:translate-x-1">
-                    {opportunity.action}
-                  </span>
-                  <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover/btn:translate-x-2 group-hover/btn:scale-110" />
-                </motion.button>
+                {opportunity.id === "aegis-security" ? (
+                  <motion.a
+                    href="https://aegis.kaleidofi.xyz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/btn flex w-full items-center justify-between rounded-lg bg-gradient-to-r from-[#00dd72]/20 to-[#00dd72]/10 px-4 py-3 text-white transition-all duration-200 hover:from-[#00dd72]/30 hover:to-[#00dd72]/20 border border-[#00dd72]/30 hover:shadow-lg hover:shadow-[#00dd72]/30"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <span className="font-semibold transition-all duration-200 group-hover/btn:translate-x-1">
+                      {opportunity.action}
+                    </span>
+                    <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover/btn:translate-x-2 group-hover/btn:scale-110" />
+                  </motion.a>
+                ) : (
+                  <motion.button
+                    className="group/btn flex w-full items-center justify-between rounded-lg bg-gradient-to-r from-[#00dd72]/20 to-[#00dd72]/10 px-4 py-3 text-white transition-all duration-200 hover:from-[#00dd72]/30 hover:to-[#00dd72]/20 border border-[#00dd72]/30 hover:shadow-lg hover:shadow-[#00dd72]/30"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => openComingSoon(opportunity.title)}
+                  >
+                    <span className="font-semibold transition-all duration-200 group-hover/btn:translate-x-1">
+                      {opportunity.action}
+                    </span>
+                    <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover/btn:translate-x-2 group-hover/btn:scale-110" />
+                  </motion.button>
+                )}
               </div>
             </motion.div>
           ))}
