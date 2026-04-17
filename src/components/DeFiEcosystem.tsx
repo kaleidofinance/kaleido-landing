@@ -108,7 +108,7 @@ const DeFiEcosystem: React.FC = () => {
     {
       id: "aegis-security",
       title: "Aegis Sentinel",
-      description: "Real-time protocol auditing and automated exploit prevention protecting all Kaleido OS modules",
+      description: "Real-time protocol auditing and automated exploit prevention protecting all Kaleido DeFi-OS modules",
       apy: "99.9%",
       points: "Security · 24/7 Guard",
       metrics: [
@@ -156,7 +156,7 @@ const DeFiEcosystem: React.FC = () => {
             <div className="flex items-center gap-3">
               <Activity className="h-7 w-7 text-[#00ff99]" />
               <h2 className="text-3xl font-bold text-white">
-                Inside the <span className="text-[#00ff99]">Kaleido Agentic OS</span>
+                Inside the <span className="text-[#00ff99]">Kaleido DeFi-OS</span>
               </h2>
             </div>
           </div>
@@ -306,9 +306,9 @@ const DeFiEcosystem: React.FC = () => {
               <TrendingUp className="h-5 w-5 text-[#00ff99]" />
             </div>
             <div className="flex-1">
-              <h4 className="mb-1 font-semibold text-white">Unified Yield across the Agentic OS Stack</h4>
+              <h4 className="mb-1 font-semibold text-white">Unified Yield across the DeFi-OS Stack</h4>
               <p className="text-sm text-gray-300">
-                Every product inside Kaleido Agentic OS feeds our volume-weighted Point Indexer — $1 of activity
+                Every product inside Kaleido DeFi-OS feeds our volume-weighted Point Indexer — $1 of activity
                 earns 1 point. Agent-powered actions via Luca earn a 1.2× multiplier. All points flow to the
                 Global Leaderboard in real time.
               </p>

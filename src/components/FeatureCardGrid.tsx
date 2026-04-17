@@ -18,7 +18,7 @@ const MODULES = [
     title: "Luca Engine",
     tag: "Reasoning Layer",
     short: "Autonomous intent execution",
-    desc: "The reasoning core of the Agentic OS. Luca interprets natural language intents, decomposes them into multi-step DeFi actions, and executes across every protocol module — autonomously.",
+    desc: "The reasoning core of the DeFi-OS. Luca interprets natural language intents, decomposes them into multi-step DeFi actions, and executes across every protocol module — autonomously.",
     features: ["Intent Parser", "Route Optimizer", "Point Indexer", "Risk Monitor"],
     accent: "#00ff99",
   },
@@ -58,7 +58,7 @@ const MODULES = [
     title: "kfUSD Ecosystem",
     tag: "Native Stablecoin",
     short: "Mint, lock, earn yield",
-    desc: "The primary liquidity layer of Kaleido OS. Deposit multi-collateral assets to mint kfUSD, then lock it in the kafUSD Vault for protocol-native yield.",
+    desc: "The primary liquidity layer of Kaleido DeFi-OS. Deposit multi-collateral assets to mint kfUSD, then lock it in the kafUSD Vault for protocol-native yield.",
     features: ["Multi-Collateral", "1:1 Peg", "kafUSD Vault", "Yield Engine"],
     accent: "#00ff99",
   },
@@ -68,7 +68,7 @@ const MODULES = [
     title: "Aegis Sentinel",
     tag: "Security Layer",
     short: "Real-time threat protection",
-    desc: "The protective layer of the Agentic OS. Aegis monitors global on-chain patterns and protocol health to detect and intercept exploits before they hit your positions.",
+    desc: "The protective layer of the DeFi-OS. Aegis monitors global on-chain patterns and protocol health to detect and intercept exploits before they hit your positions.",
     features: ["Exploit Guard", "Automated Pause", "Liquidity Shield", "Honey-pot Scan"],
     accent: "#00ff99",
   },
@@ -255,7 +255,7 @@ const FeatureCardGrid = () => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-sm font-semibold text-[#00ff99] hover:text-[#00ff99]/80 transition-colors group/link"
                   >
-                    Try {selected.title} on {selected.id === "aegis" ? "Aegis Sentinel" : "Kaleido OS"}
+                    Try {selected.title} on {selected.id === "aegis" ? "Aegis Sentinel" : "Kaleido DeFi-OS"}
                     <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                   </a>
                 </div>

@@ -415,7 +415,7 @@ const DemoModal: React.FC<DemoModalProps> = ({ open, onOpenChange }) => {
                   <Play className="w-5 h-5 text-[#00dd72]" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-bold text-white">Kaleido Agentic OS Demo</h2>
+                  <h2 className="text-xl font-bold text-white">Kaleido DeFi-OS Demo</h2>
                   <p className="text-sm text-gray-400">Interactive UI Preview</p>
                 </div>
               </div>

@@ -105,7 +105,7 @@ const MarketSection: React.FC = () => {
             >
                 <Image
                     src="/CryptoAssets.svg"
-                    alt="Supported crypto assets on Kaleido Agentic OS"
+                    alt="Supported crypto assets on Kaleido DeFi-OS"
                     width={500}
                     height={300}
                     className="w-full h-auto drop-shadow-[0_0_30px_rgba(0,255,153,0.1)]"

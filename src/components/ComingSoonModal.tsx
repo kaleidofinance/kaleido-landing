@@ -58,7 +58,7 @@ const ComingSoonModal = ({ open, product, onClose }: ComingSoonModalProps) => {
 
               <h3 className="mt-4 text-xl font-bold text-white">{product}</h3>
               <p className="mt-2 text-sm text-white/40 leading-relaxed">
-                This product is part of the Kaleido Agentic OS stack and is actively being built.
+                This product is part of the Kaleido DeFi-OS stack and is actively being built.
                 Join the testnet to be among the first to access it.
               </p>
 

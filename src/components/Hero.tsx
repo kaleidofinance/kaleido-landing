@@ -150,7 +150,7 @@ const Hero = () => {
                   <span className="w-3 h-3 rounded-full bg-yellow-500/60" />
                   <span className="w-3 h-3 rounded-full bg-[#00ff99]/60" />
                 </div>
-                <span className="ml-2 text-xs text-white/30 font-mono">luca@kaleido-os ~ agentic-session</span>
+                <span className="ml-2 text-xs text-white/30 font-mono">luca@kaleido-defi-os ~ agentic-session</span>
               </div>
 
               {/* Terminal body */}

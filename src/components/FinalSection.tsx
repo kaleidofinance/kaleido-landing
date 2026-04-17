@@ -26,7 +26,7 @@ const FinalSection: React.FC = () => {
                         </span>
                     </h2>
                     <p className="text-lg text-white/40 max-w-xl mx-auto leading-relaxed">
-                        Deploy, Stake, and Reason. The Kaleido Agentic OS is live — and Luca is ready to execute.
+                        Deploy, Stake, and Reason. The Kaleido DeFi-OS is live — and Luca is ready to execute.
                     </p>
                 </motion.div>
 
@@ -65,7 +65,7 @@ const FinalSection: React.FC = () => {
                         <div className="relative overflow-hidden rounded-xl">
                             <Image
                                 src="/Dashboard.png"
-                                alt="Kaleido Agentic OS Dashboard Interface"
+                                alt="Kaleido DeFi-OS Dashboard Interface"
                                 width={1200}
                                 height={600}
                                 className="w-full h-auto"
@@ -89,7 +89,7 @@ const FinalSection: React.FC = () => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2.5 px-10 py-4 rounded-xl bg-[#00ff99] text-black text-sm font-bold hover:bg-[#00ff99]/90 transition-all duration-200 shadow-[0_0_30px_rgba(0,255,153,0.3)] hover:shadow-[0_0_50px_rgba(0,255,153,0.5)] group"
                     >
-                        Launch Kaleido Agentic OS
+                        Launch Kaleido DeFi-OS
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                     </a>
                 </motion.div>

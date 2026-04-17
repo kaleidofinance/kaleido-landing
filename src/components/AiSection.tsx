@@ -152,7 +152,7 @@ const AiSection = () => {
               </span>
             </h2>
             <p className="text-white/50 text-base leading-relaxed mb-8 max-w-sm">
-              Luca isn't a chatbot — it's the reasoning engine of Kaleido Agentic OS. It
+              Luca isn't a chatbot — it's the reasoning engine of Kaleido DeFi-OS. It
               interprets your intent and executes DeFi actions autonomously across the entire
               protocol stack.
             </p>

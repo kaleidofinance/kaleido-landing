@@ -14,7 +14,7 @@ const CardDetails = () => {
         </div>
         <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white leading-tight">Engineered for <span className="bg-gradient-to-r from-[#00ff99] to-[#00dd72] bg-clip-text text-transparent">Autonomous Finance</span></h2>
         <p className="max-w-3xl mx-auto text-lg text-white/50 leading-relaxed mb-16">
-          The Kaleido Agentic OS is built on a high-security, upgradeable diamond-modular core, designed for continuous autonomous execution.
+          The Kaleido DeFi-OS is built on a high-security, upgradeable diamond-modular core, designed for continuous autonomous execution.
         </p>
         
         <GlassCard className="max-w-6xl mx-auto p-12 hover:border-[#00ff99]/20 transition-all duration-300">

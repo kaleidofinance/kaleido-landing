@@ -44,7 +44,7 @@ const Navbar = () => {
               />
             </div>
             <span className="text-xl font-bold tracking-tight text-white group-hover:text-[#00ff99] transition-colors">
-              Kaleido <span className="text-white/30 font-normal ml-0.5">OS</span>
+              Kaleido <span className="text-white/30 font-normal ml-0.5">DeFi-OS</span>
             </span>
           </Link>
 

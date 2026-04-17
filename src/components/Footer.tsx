@@ -17,7 +17,7 @@ const Footer = () => {
                 <img src="/newklogo.png" alt="K" className="w-full h-full object-cover" />
                </div>
                <span className="text-lg font-bold tracking-tight text-white transition-colors">
-                  Kaleido <span className="text-white/30 font-normal ml-0.5">OS</span>
+                  Kaleido <span className="text-white/30 font-normal ml-0.5">DeFi-OS</span>
                 </span>
             </Link>
             <p className="text-xs text-white/25 leading-relaxed mb-6 max-w-[200px]">
@@ -80,7 +80,7 @@ const Footer = () => {
 
         {/* Bottom bar */}
         <div className="mt-16 pt-6 border-t border-white/[0.04] flex flex-col md:flex-row items-center justify-between gap-4">
-          <span className="text-xs text-white/20">© 2026 Kaleido Agentic OS. All rights reserved.</span>
+          <span className="text-xs text-white/20">© 2026 Kaleido DeFi-OS. All rights reserved.</span>
           <div className="flex items-center gap-6">
             <a href="https://kaleidos-finance.gitbook.io/kaleido/" target="_blank" rel="noopener noreferrer" className="text-xs text-white/20 hover:text-white/40 transition-colors">Privacy Policy</a>
             <a href="https://kaleidos-finance.gitbook.io/kaleido/" target="_blank" rel="noopener noreferrer" className="text-xs text-white/20 hover:text-white/40 transition-colors">Terms of Service</a>

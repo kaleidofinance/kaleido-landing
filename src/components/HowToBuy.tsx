@@ -20,7 +20,7 @@ const HowToBuy: React.FC = () => {
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl font-bold mb-4 text-white">Simple 3-Step Process</h2>
-                    <p className="text-xl text-gray-300 mb-2">Get Started with Kaleido Agentic OS</p>
+                    <p className="text-xl text-gray-300 mb-2">Get Started with Kaleido DeFi-OS</p>
                     <p className="text-[#00ff99] font-semibold">Connect. Deploy. Earn.</p>
                 </div>
                 
