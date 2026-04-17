@@ -52,9 +52,8 @@ const Footer = () => {
             <h4 className="text-[10px] font-bold tracking-widest uppercase text-white/25 mb-4">Ecosystem</h4>
             <ul className="space-y-2.5">
               <li><a href="/roadmap" className="text-sm text-white/40 hover:text-[#00ff99] transition-colors">Roadmap</a></li>
-              <li><a href="https://kaleidos-finance.gitbook.io/kaleido/" target="_blank" rel="noopener noreferrer" className="text-sm text-white/40 hover:text-[#00ff99] transition-colors">Ecosystem</a></li>
               <li><a href="https://kaleidos-finance.gitbook.io/kaleido/" target="_blank" rel="noopener noreferrer" className="text-sm text-white/40 hover:text-[#00ff99] transition-colors">Governance</a></li>
-              <li><a href="https://app.kaleido.xyz" target="_blank" rel="noopener noreferrer" className="text-sm text-white/40 hover:text-[#00ff99] transition-colors">Launch App</a></li>
+              <li><a href="https://aegis.kaleidofi.xyz" target="_blank" rel="noopener noreferrer" className="text-sm text-white/40 hover:text-[#00ff99] transition-colors">Aegis Sentinel</a></li>
             </ul>
           </div>
 

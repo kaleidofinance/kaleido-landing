@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { label: "Docs", href: "https://kaleidos-finance.gitbook.io/kaleido/", external: true },
   { label: "Ecosystem", href: "https://kaleidos-finance.gitbook.io/kaleido/", external: true },
   { label: "Governance", href: "https://kaleidos-finance.gitbook.io/kaleido/", external: true },
+  { label: "Aegis", href: "https://aegis.kaleidofi.xyz", external: true, isNew: true },
   { label: "Roadmap", href: "/roadmap", external: false },
 ];
 
@@ -68,8 +69,16 @@ const Navbar = () => {
             ))}
           </nav>
 
-          {/* CTA */}
-          <div className="hidden md:flex items-center gap-4">
+          {/* CTA Group */}
+          <div className="hidden md:flex items-center gap-3">
+            <a
+              href="https://aegis.kaleidofi.xyz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 rounded-lg bg-white/[0.03] border border-white/10 text-white/70 font-semibold text-xs tracking-wider hover:bg-white/[0.06] hover:text-white transition-all duration-300"
+            >
+              Aegis Sentinel
+            </a>
             <a
               href="https://app.kaleido.xyz"
               target="_blank"
@@ -117,14 +126,26 @@ const Navbar = () => {
                 )}
               </a>
             ))}
-            <a
-              href="https://app.kaleido.xyz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 flex items-center justify-center gap-2 w-full py-3 text-sm font-bold text-black bg-[#00ff99] rounded-xl shadow-[0_0_20px_rgba(0,255,153,0.3)]"
-            >
-              Launch App <ExternalLink className="w-4 h-4" />
-            </a>
+            <div className="flex flex-col gap-3 mt-4">
+              <a
+                href="https://aegis.kaleidofi.xyz"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center justify-center gap-2 w-full py-4 text-sm font-semibold text-white/70 bg-white/5 border border-white/10 rounded-xl"
+              >
+                Aegis Sentinel
+              </a>
+              <a
+                href="https://app.kaleido.xyz"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center justify-center gap-2 w-full py-4 text-sm font-bold text-black bg-[#00ff99] rounded-xl shadow-[0_0_20px_rgba(0,255,153,0.3)]"
+              >
+                Launch App <ExternalLink className="w-4 h-4" />
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
