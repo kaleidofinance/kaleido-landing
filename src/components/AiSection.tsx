@@ -157,22 +157,22 @@ const AiSection = () => {
               protocol stack.
             </p>
 
-            <div className="space-y-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
               {CAPABILITIES.map((cap, i) => (
                 <motion.div
                   key={cap.title}
-                  className="flex items-start gap-4 group"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  className="p-5 rounded-2xl border border-white/[0.03] bg-white/[0.02] hover:bg-white/[0.04] hover:border-[#00ff99]/20 transition-all duration-300 group"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.5 }}
                 >
-                  <div className="shrink-0 p-2.5 rounded-lg border border-[#00ff99]/20 bg-[#00ff99]/5 group-hover:border-[#00ff99]/40 group-hover:bg-[#00ff99]/10 transition-all duration-200">
-                    <cap.icon className="w-4 h-4 text-[#00ff99]" />
+                  <div className="mb-4 inline-flex p-2.5 rounded-xl border border-[#00ff99]/20 bg-[#00ff99]/5 group-hover:border-[#00ff99]/40 group-hover:bg-[#00ff99]/10 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-[0_0_15px_rgba(0,255,153,0.1)]">
+                    <cap.icon className="w-5 h-5 text-[#00ff99]" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-white mb-0.5">{cap.title}</p>
-                    <p className="text-xs text-white/40 leading-relaxed">{cap.desc}</p>
+                    <h4 className="text-sm font-bold text-white mb-2 group-hover:text-[#00ff99] transition-colors">{cap.title}</h4>
+                    <p className="text-[11px] text-white/40 leading-relaxed min-h-[40px]">{cap.desc}</p>
                   </div>
                 </motion.div>
               ))}
