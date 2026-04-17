@@ -55,7 +55,7 @@ async function connectToDatabase() {
     global._mongoCache = {};
   }
 
-  if (!global._mongoCache[cacheKey]) {
+  if (!global._mongoCache[cacheKey] || !global._mongoCache[cacheKey].conn) {
     global._mongoCache[cacheKey] = {
       conn: MongoClient.connect(MONGODB_URI, options).then((client) => {
         const db = client.db('kaleido');

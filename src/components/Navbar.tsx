@@ -8,6 +8,8 @@ import { ExternalLink, Menu, X } from "lucide-react";
 const NAV_LINKS = [
   { label: "Docs", href: "https://kaleidos-finance.gitbook.io/kaleido/", external: true },
   { label: "Leaderboard", href: "/leaderboard", external: false },
+  { label: "Ecosystem", href: "https://kaleidos-finance.gitbook.io/kaleido/", external: true },
+  { label: "Governance", href: "https://kaleidos-finance.gitbook.io/kaleido/", external: true },
   { label: "Roadmap", href: "/roadmap", external: false },
 ];
 
@@ -54,7 +56,7 @@ const Navbar = () => {
                 href={link.href}
                 target={link.external ? "_blank" : "_self"}
                 rel={link.external ? "noopener noreferrer" : ""}
-                className="relative px-4 py-1.5 text-[13px] font-semibold text-white/50 hover:text-white transition-all duration-200 rounded-full hover:bg-white/[0.05]"
+                className="relative px-3.5 py-1.5 text-[13px] font-semibold text-white/50 hover:text-white transition-all duration-200 rounded-full hover:bg-white/[0.05]"
               >
                 {link.label}
                 {link.isNew && (
