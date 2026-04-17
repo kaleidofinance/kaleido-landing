@@ -213,7 +213,7 @@ export default function UserProfile({ registrationData, onLogout }: UserProfileP
       // Open Twitter post in new tab
       window.open('https://x.com/kaleido_finance/status/1887360760583713153', '_blank');
 
-      const response = await fetch('/api/testnet/claim-abstract-points', {
+      const response = await fetch('/api/testnet/claim-kaleido-points', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

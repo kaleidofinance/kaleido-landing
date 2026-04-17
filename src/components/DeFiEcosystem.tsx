@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, TrendingUp, Activity, ChevronDown, ChevronUp } from "lucide-react";
+import ComingSoonModal from "./ComingSoonModal";
 
 interface YieldCard {
   id: string;
@@ -20,6 +21,13 @@ interface YieldCard {
 
 const DeFiEcosystem: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState("");
+
+  const openComingSoon = (title: string) => {
+    setSelectedProduct(title);
+    setModalOpen(true);
+  };
   
   const yieldOpportunities: YieldCard[] = [
     {
@@ -27,7 +35,7 @@ const DeFiEcosystem: React.FC = () => {
       title: "Featured Pool Lending",
       description: "Lend USDC, USDT, USDe through featured pools with instant liquidity",
       apy: "≈8.0%",
-      points: "5x Points",
+      points: "$1 = 1 pt · Lending",
       metrics: [
         { label: "Total Pool", value: "$500.00K" },
         { label: "Borrowed", value: "$250.00K" },
@@ -42,7 +50,7 @@ const DeFiEcosystem: React.FC = () => {
       title: "kfUSD Yield Vault",
       description: "Lock kfUSD to earn yield funded by lending interest and fees",
       apy: "≈5.0%",
-      points: "3x Points",
+      points: "$1 = 1 pt · Vault",
       metrics: [
         { label: "TVL", value: "$1.50M" },
         { label: "kafUSD", value: "1.58M" },
@@ -57,7 +65,7 @@ const DeFiEcosystem: React.FC = () => {
       title: "USDC/USDT Liquidity",
       description: "Provide liquidity to stablecoin trading pairs and earn fees",
       apy: "≈12.5%",
-      points: "10x Points",
+      points: "$1 = 1.2 pt · Luca LP",
       metrics: [
         { label: "Liquidity", value: "$2.75M" },
         { label: "Volume (24h)", value: "$187.50K" },
@@ -69,10 +77,10 @@ const DeFiEcosystem: React.FC = () => {
     },
     {
       id: "trading",
-      title: "DEX Trading",
-      description: "Swap tokens instantly with low slippage on our automated market maker DEX",
+      title: "V3 Omni-Pool DEX",
+      description: "Swap tokens with concentrated liquidity and best-route execution via Luca AI",
       apy: "0.3%",
-      points: "2x Points",
+      points: "$1 = 1.2 pt · Agent Swap",
       metrics: [
         { label: "24h Volume", value: "$1.25M" },
         { label: "Total Pairs", value: "45+" },
@@ -84,10 +92,10 @@ const DeFiEcosystem: React.FC = () => {
     },
     {
       id: "kld-staking",
-      title: "KLD Staking",
-      description: "Stake KLD tokens to earn stKLD rewards while maintaining liquidity and governance rights",
+      title: "KLD Liquid Staking",
+      description: "Stake KLD to mint stKLD — earn yield while keeping full derivative liquidity",
       apy: "≈15.0%",
-      points: "7x Points",
+      points: "10 pt / KLD staked",
       metrics: [
         { label: "Total Staked", value: "$3.50M" },
         { label: "stKLD Supply", value: "3.25M" },
@@ -125,19 +133,21 @@ const DeFiEcosystem: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <div className="flex items-center gap-3">
-            <Activity className="h-8 w-8 text-[#00dd72]" />
-            <h2 className="text-3xl font-bold text-white">
-              Discover <span className="text-[#00dd72]">Kaleido DeFi Ecosystem</span>
-            </h2>
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="h-px w-6 bg-[#00ff99]/40" />
+              <span className="text-xs font-semibold tracking-widest uppercase text-[#00ff99]">App Preview</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <Activity className="h-7 w-7 text-[#00ff99]" />
+              <h2 className="text-3xl font-bold text-white">
+                Inside the <span className="text-[#00ff99]">Kaleido Agentic OS</span>
+              </h2>
+            </div>
           </div>
-          <motion.span
-            className="rounded-full bg-[#00dd72]/20 px-4 py-1 text-sm font-semibold text-[#00dd72] border border-[#00dd72]/40"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
-          >
-            Explore Partner-Powered Yield
-          </motion.span>
+          <span className="rounded-full bg-[#00ff99]/10 px-4 py-1 text-sm font-semibold text-[#00ff99] border border-[#00ff99]/25">
+            Kaleido Native
+          </span>
         </motion.div>
 
         {/* Cards Grid */}
@@ -215,15 +225,7 @@ const DeFiEcosystem: React.FC = () => {
                   className="group/btn flex w-full items-center justify-between rounded-lg bg-gradient-to-r from-[#00dd72]/20 to-[#00dd72]/10 px-4 py-3 text-white transition-all duration-200 hover:from-[#00dd72]/30 hover:to-[#00dd72]/20 border border-[#00dd72]/30 hover:shadow-lg hover:shadow-[#00dd72]/30"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => {
-                    if (opportunity.id === "trading") {
-                      window.open('https://app.kaleidofinance.xyz/swap', '_blank');
-                    } else if (opportunity.id === "kld-staking") {
-                      window.open('https://app.kaleidofinance.xyz/staking', '_blank');
-                    } else {
-                      window.open('https://app.kaleidofinance.xyz', '_blank');
-                    }
-                  }}
+                  onClick={() => openComingSoon(opportunity.title)}
                 >
                   <span className="font-semibold transition-all duration-200 group-hover/btn:translate-x-1">
                     {opportunity.action}
@@ -262,27 +264,34 @@ const DeFiEcosystem: React.FC = () => {
 
         {/* Info Banner */}
         <motion.div
-          className="rounded-xl border border-[#00dd72]/20 bg-gradient-to-r from-[#00dd72]/10 via-transparent to-[#00dd72]/10 p-6 backdrop-blur-sm"
+          className="rounded-xl border border-[#00ff99]/15 bg-gradient-to-r from-[#00ff99]/5 via-transparent to-[#00ff99]/5 p-6 backdrop-blur-sm"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: true }}
         >
           <div className="flex items-start gap-4">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#00dd72]/20">
-              <TrendingUp className="h-5 w-5 text-[#00dd72]" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#00ff99]/10 shrink-0">
+              <TrendingUp className="h-5 w-5 text-[#00ff99]" />
             </div>
             <div className="flex-1">
-              <h4 className="mb-2 font-semibold text-white">Multi-Chain Yield Aggregation</h4>
+              <h4 className="mb-1 font-semibold text-white">Unified Yield across the Agentic OS Stack</h4>
               <p className="text-sm text-gray-300">
-                Access diverse yield opportunities across our Kaleido DeFi Ecosystem. All APYs are calculated based on 
-                real-time market conditions and partner protocol rates. Earn bonus Points that can be converted to KLD tokens 
-                for additional rewards on select opportunities.
+                Every product inside Kaleido Agentic OS feeds our volume-weighted Point Indexer — $1 of activity
+                earns 1 point. Agent-powered actions via Luca earn a 1.2× multiplier. All points flow to the
+                Global Leaderboard in real time.
               </p>
+              <p className="text-xs text-white/25 mt-3 italic">* Figures shown are illustrative previews of the live app interface.</p>
             </div>
           </div>
         </motion.div>
       </div>
+
+      <ComingSoonModal
+        open={modalOpen}
+        product={selectedProduct}
+        onClose={() => setModalOpen(false)}
+      />
     </motion.section>
   );
 };

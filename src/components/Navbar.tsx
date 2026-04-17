@@ -1,219 +1,133 @@
 "use client";
 
-import { navLinks } from "@/constants";
 import { useState, useEffect } from "react";
-import { useWeb3 } from "@/providers/Web3Provider";
-import EditXUsernameModal from "./common/EditXUsernameModal";
-import { useXUsernameEdit } from "@/hooks/useXUsernameEdit";
-import type { RegistrationData } from '@/types/registration';
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import { ExternalLink, Menu, X } from "lucide-react";
+
+const NAV_LINKS = [
+  { label: "Docs", href: "https://kaleidos-finance.gitbook.io/kaleido/", external: true },
+  { label: "Leaderboard", href: "/leaderboard", external: false },
+  { label: "Roadmap", href: "/roadmap", external: false },
+];
 
 const Navbar = () => {
-  const [active, setActive] = useState("Open dApp");
-  const [toggle, setToggle] = useState(false);
-  const { account } = useWeb3();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userData, setUserData] = useState<RegistrationData | null>(null);
-  const { 
-    isModalOpen, 
-    currentUsername, 
-    openModal, 
-    closeModal, 
-    updateUsername 
-  } = useXUsernameEdit(userData?.xUsername);
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-  // Check if user is logged in and fetch user data
   useEffect(() => {
-    const checkUserStatus = async () => {
-      if (account) {
-        try {
-          const response = await fetch(`/api/testnet/user?walletAddress=${account}`);
-          if (response.ok) {
-            const data = await response.json();
-            if (data.registration) {
-              setIsLoggedIn(true);
-              setUserData(data.registration);
-              // Log the username for debugging
-              console.log('User X username:', data.registration.xUsername);
-            } else {
-              setIsLoggedIn(false);
-              setUserData(null);
-            }
-          } else {
-            setIsLoggedIn(false);
-            setUserData(null);
-          }
-        } catch (error) {
-          console.error('Error checking user status:', error);
-          setIsLoggedIn(false);
-          setUserData(null);
-        }
-      } else {
-        setIsLoggedIn(false);
-        setUserData(null);
-      }
-    };
-
-    checkUserStatus();
-  }, [account]);
-
-  // Listen for the custom edit-x-username event
-  useEffect(() => {
-    const handleEditXUsername = () => {
-      openModal();
-    };
-
-    window.addEventListener('edit-x-username', handleEditXUsername);
-
-    return () => {
-      window.removeEventListener('edit-x-username', handleEditXUsername);
-    };
-  }, [openModal]);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="w-full flex py-6 justify-between items-center">
-      {/* Logo Section */}
-      <div className="flex items-center gap-2">
-        <Link href="/">
-          <img src="/white-word.png" alt="Brand Name" className="w-30 h-10 cursor-pointer" />
-        </Link>
-      </div>
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          scrolled
+            ? "bg-[#080b09]/80 backdrop-blur-xl border-b border-white/[0.05] py-2 shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
+            : "bg-transparent py-4"
+        }`}
+      >
+        <div className="max-w-[1440px] mx-auto px-6 md:px-10 flex items-center justify-between">
+          {/* Logo - Clean Text Branding */}
+          <Link href="/" className="group flex items-center gap-3 shrink-0">
+            <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-[#00ff99]/10 to-[#00dd72]/10 flex items-center justify-center overflow-hidden border border-white/[0.1] shadow-2xl">
+              <img src="/newklogo.png" alt="K" className="w-full h-full object-cover" />
+              <motion.div 
+                className="absolute inset-0 rounded-xl border border-[#00ff99]/30"
+                animate={{ opacity: [0.3, 0.6, 0.3] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              />
+            </div>
+            <span className="text-xl font-bold tracking-tight text-white group-hover:text-[#00ff99] transition-colors">
+              Kaleido <span className="text-white/30 font-normal ml-0.5">OS</span>
+            </span>
+          </Link>
 
-      {/* Desktop Navigation */}
-      <ul className="hidden sm:flex items-center gap-10">
-        {navLinks.filter(nav => nav.title.toLowerCase() !== 'content' && nav.id.toLowerCase() !== '/content').map((nav, index) => (
-          <li key={nav.id} className="relative">
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-2 p-1 rounded-full bg-white/[0.03] border border-white/[0.05]">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.external ? "_blank" : "_self"}
+                rel={link.external ? "noopener noreferrer" : ""}
+                className="relative px-4 py-1.5 text-[13px] font-semibold text-white/50 hover:text-white transition-all duration-200 rounded-full hover:bg-white/[0.05]"
+              >
+                {link.label}
+                {link.isNew && (
+                  <span className="absolute -top-1 -right-1 flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00ff99] opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00ff99]"></span>
+                  </span>
+                )}
+              </a>
+            ))}
+          </nav>
+
+          {/* CTA */}
+          <div className="hidden md:flex items-center gap-4">
             <a
-              href={nav.id}
-              target={nav.id.startsWith('http') ? "_blank" : "_self"}
-              rel={nav.id.startsWith('http') ? "noopener noreferrer" : ""}
-              className={`font-medium text-[16px] transition-all duration-300 ${
-                nav.title === "Testnet"
-                  ? "border-2 border-[#00dd72] text-[#00dd72] hover:bg-[#00dd72] hover:text-white px-5 py-2 rounded-lg"
-                  : active === nav.title
-                  ? "text-[#00dd72]"
-                  : "text-white hover:text-[#00dd72]"
-              }`}
-              onClick={() => setActive(nav.title)}
+              href="https://app.kaleidofinance.xyz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-gradient-to-r from-[#00ff99] to-[#00dd72] text-black font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-all duration-300 shadow-[0_0_20px_rgba(0,255,153,0.2)] hover:shadow-[0_0_30px_rgba(0,255,153,0.4)]"
             >
-              {nav.title}
-              {/* Add LIVE tag for Open dApp */}
-              {nav.title === "Open dApp" && (
-                <span className="absolute -top-3 -right-10 bg-[#00dd72] text-black text-xs font-bold px-2 py-0.5 rounded-full animate-pulse">
-                  LIVE
-                </span>
-              )}
-              {nav.isNew && (
-                <span className="absolute -top-3 -right-6 bg-[#00dd72] text-black text-xs font-bold px-2 py-0.5 rounded-full animate-pulse">
-                  NEW
-                </span>
-              )}
+              Launch App
+              <ExternalLink className="w-3 h-3" />
             </a>
-          </li>
-        ))}
-        
-        {/* Link X Account Button - Show if logged in but X not linked */}
-        {isLoggedIn && !userData?.xId && (
-          <li className="relative">
-            <button
-              onClick={() => {
-                if (account) {
-                  window.location.href = `/api/testnet/x-auth?wallet=${account}`;
-                } else {
-                  alert('Please connect your wallet first.');
-                }
-              }}
-              className="font-medium text-[16px] text-white flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300 group hover:bg-[#00dd72] hover:text-white focus:outline-none"
-              style={{ position: 'relative' }}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 1200 1227" fill="none">
-                <g>
-                  <path fill="currentColor" d="M1199.14 0H944.93L600.01 455.36L255.07 0H0l462.36 613.19L0 1227h254.21l345.8-466.13L945.79 1227H1201L736.98 601.5 1199.14 0ZM300.6 112.36l299.41 397.13 299.41-397.13h151.13L750.13 601.5l300.42 401.14h-151.13L600.01 805.86 299.41 1002.64H148.28l300.42-401.14L148.28 112.36H300.6Z"/>
-                </g>
-              </svg>
-              Link X Account
-              <span className="ml-2 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full animate-pulse group-hover:bg-white group-hover:text-red-500 transition-colors">HOT</span>
-            </button>
-          </li>
-        )}
-      </ul>
-
-      {/* Mobile Navigation */}
-      <div className="sm:hidden flex items-center">
-        <img
-          src={toggle ? "/close.svg" : "/menu.svg"}
-          alt={toggle ? "Close Menu" : "Open Menu"}
-          className="w-7 h-7 object-contain cursor-pointer"
-          onClick={() => setToggle(!toggle)}
-        />
-
-        {toggle && (
-          <div className="p-6 bg-black-gradient absolute top-20 z-50 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar">
-            <ul className="flex flex-col items-start gap-4">
-              {navLinks.filter(nav => nav.title.toLowerCase() !== 'content' && nav.id.toLowerCase() !== '/content').map((nav) => (
-                <li key={nav.id} className="w-full relative">
-                  <a
-                    href={nav.id}
-                    target={nav.id.startsWith('http') ? "_blank" : "_self"}
-                    rel={nav.id.startsWith('http') ? "noopener noreferrer" : ""}
-                    className={`font-medium text-[16px] block transition-all duration-300 ${
-                      nav.title === "Testnet"
-                        ? "border-2 border-[#00dd72] text-[#00dd72] hover:bg-[#00dd72] hover:text-white px-5 py-2 rounded-lg text-center"
-                        : active === nav.title
-                        ? "text-[#00dd72]"
-                        : "text-white hover:text-[#00dd72]"
-                    }`}
-                    onClick={() => {
-                      setActive(nav.title);
-                      setToggle(false);
-                    }}
-                  >
-                    {nav.title}
-                    {/* Add LIVE tag for Open dApp */}
-                    {nav.title === "Open dApp" && (
-                      <span className="absolute -top-3 -right-10 bg-[#00dd72] text-black text-xs font-bold px-2 py-0.5 rounded-full animate-pulse">
-                        LIVE
-                      </span>
-                    )}
-                    {nav.isNew && (
-                      <span className="absolute -top-3 -right-6 bg-[#00dd72] text-black text-xs font-bold px-2 py-0.5 rounded-full animate-pulse">
-                        NEW
-                      </span>
-                    )}
-                  </a>
-                </li>
-              ))}
-              
-              {/* Link X Account Button for Mobile - Show if logged in but X not linked */}
-              {isLoggedIn && !userData?.xId && (
-                <li className="w-full">
-                  <button
-                    onClick={() => {
-                      setToggle(false);
-                      if (account) {
-                        window.location.href = `/api/testnet/x-auth?wallet=${account}`;
-                      } else {
-                        alert('Please connect your wallet first.');
-                      }
-                    }}
-                    className="font-medium text-[16px] text-white flex items-center gap-2 w-full px-4 py-2 rounded-lg transition-all duration-300 group hover:bg-[#00dd72] hover:text-white focus:outline-none"
-                    style={{ position: 'relative' }}
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 1200 1227" fill="none">
-                      <g>
-                        <path fill="currentColor" d="M1199.14 0H944.93L600.01 455.36L255.07 0H0l462.36 613.19L0 1227h254.21l345.8-466.13L945.79 1227H1201L736.98 601.5 1199.14 0ZM300.6 112.36l299.41 397.13 299.41-397.13h151.13L750.13 601.5l300.42 401.14h-151.13L600.01 805.86 299.41 1002.64H148.28l300.42-401.14L148.28 112.36H300.6Z"/>
-                      </g>
-                    </svg>
-                    Link X Account
-                    <span className="ml-2 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full animate-pulse group-hover:bg-white group-hover:text-red-500 transition-colors">HOT</span>
-                  </button>
-                </li>
-              )}
-            </ul>
           </div>
+
+          {/* Mobile hamburger */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="md:hidden p-2 text-white/60 hover:text-white"
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
+      </header>
+
+      {/* Mobile Overlay */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-40 pt-20 bg-[#0a0f0c]/98 backdrop-blur-2xl flex flex-col px-6 gap-6 md:hidden"
+          >
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.external ? "_blank" : "_self"}
+                rel={link.external ? "noopener noreferrer" : ""}
+                onClick={() => setMobileOpen(false)}
+                className="text-xl font-semibold text-white/70 hover:text-[#00ff99] transition-colors py-2 border-b border-white/5 flex items-center justify-between"
+              >
+                <span>{link.label}</span>
+                {link.isNew && (
+                  <span className="text-[10px] font-bold text-black bg-[#00ff99] px-1.5 py-0.5 rounded-full">NEW</span>
+                )}
+              </a>
+            ))}
+            <a
+              href="https://app.kaleidofinance.xyz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 flex items-center justify-center gap-2 w-full py-3 text-sm font-bold text-black bg-[#00ff99] rounded-xl shadow-[0_0_20px_rgba(0,255,153,0.3)]"
+            >
+              Launch App <ExternalLink className="w-4 h-4" />
+            </a>
+          </motion.div>
         )}
-      </div>
-    </nav>
+      </AnimatePresence>
+    </>
   );
 };
 

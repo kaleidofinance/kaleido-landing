@@ -3,60 +3,73 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { GlowButton } from './GlowButton';
 
 const MarketSection: React.FC = () => {
     return (
         <motion.div
-            className="bg-[#111714] flex flex-col items-center text-center px-4 relative pt-16"
+            className="bg-[#080b09] flex flex-col items-center text-center px-4 relative pt-16 pb-4"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true, amount: 0.2 }}
         >
-            {/* Market Label */}
+            {/* Section Label */}
             <motion.div
-                className="text-xs text-gray-300 uppercase tracking-wide mb-4 bg-[#111714]/60 border border-[#00dd72]/30 py-3 px-4 rounded-3xl"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2, duration: 0.7 }}
-                viewport={{ once: true, amount: 0.5 }}
+                className="flex items-center gap-2 mb-3"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                viewport={{ once: true }}
             >
-                Market
+                <span className="h-px w-5 bg-[#00ff99]/40" />
+                <span className="text-[10px] font-semibold tracking-widest uppercase text-[#00ff99]">Supported Assets</span>
+                <span className="h-px w-5 bg-[#00ff99]/40" />
             </motion.div>
 
-            {/* Popular Heading */}
+            {/* Heading */}
             <motion.h2
-                className="text-white mb-8 z-10 max-w-[520px] font-bold ss:text-[48px] text-[32px] ss:leading-[48px] leading-[32px]"
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className="text-white mb-3 z-10 max-w-[500px] font-bold ss:text-[38px] text-[28px] ss:leading-[44px] leading-[32px] tracking-tight"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.7 }}
-                viewport={{ once: true, amount: 0.5 }}
+                viewport={{ once: true }}
             >
-                Most <span className="text-[#00dd72]">popular</span> integrated assets
+                Natively <span className="bg-gradient-to-r from-[#00ff99] to-[#00dd72] bg-clip-text text-transparent">integrated</span> across the OS
             </motion.h2>
 
-            {/* Visit Marketplace Button */}
+            <motion.p
+                className="text-white/40 text-sm max-w-sm mb-6 z-10 font-medium"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.35, duration: 0.6 }}
+                viewport={{ once: true }}
+            >
+                Every asset is fully composable across Lending, DEX, Staking, and the kfUSD Vault — powered by Luca's routing engine.
+            </motion.p>
+
+            {/* CTA Button */}
             <motion.div
                 className="mb-12 z-10"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.7 }}
-                viewport={{ once: true, amount: 0.5 }}
+                viewport={{ once: true }}
             >
-                <GlowButton 
-                    size="lg" 
-                    className="group flex items-center"
-                    onClick={() => window.open('https://app.kaleidofinance.xyz/', '_blank')}
+                <a
+                    href="https://app.kaleidofinance.xyz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#00ff99] text-black text-sm font-bold hover:bg-[#00ff99]/90 transition-all duration-200 shadow-[0_0_25px_rgba(0,255,153,0.3)] hover:shadow-[0_0_40px_rgba(0,255,153,0.5)] group"
                 >
-                    Visit Marketplace
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </GlowButton>
+                    Launch App
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                </a>
             </motion.div>
 
+            {/* Floating decorative elements */}
             <motion.div
-                className="absolute top-0 md:top-6 right-0 w-32 h-32 sm:w-48 sm:h-48"
-                animate={{ opacity: [0.7, 1, 0.7], y: [0, 20, 0] }}
+                className="absolute top-0 md:top-6 right-0 w-24 h-24 sm:w-32 sm:h-32 opacity-30"
+                animate={{ opacity: [0.3, 0.5, 0.3], y: [0, 15, 0] }}
                 transition={{ duration: 6, repeat: Infinity }}
             >
                 <Image
@@ -64,13 +77,13 @@ const MarketSection: React.FC = () => {
                     alt="Switch"
                     width={500}
                     height={300}
-                    className="w-full h-auto"
+                    className="w-full h-auto grayscale opacity-50"
                 />
             </motion.div>
 
             <motion.div
-                className="absolute md:top-24 lgg:top-28 top-10 left-0 w-32 h-32 sm:w-48 md:w-[16rem] sm:h-48 z-10"
-                animate={{ opacity: [0.5, 1, 0.5], y: [0, -20, 0] }}
+                className="absolute md:top-24 lgg:top-28 top-10 left-0 w-24 h-24 sm:w-32 md:w-[12rem] sm:h-32 z-10 opacity-30"
+                animate={{ opacity: [0.3, 0.5, 0.3], y: [0, -15, 0] }}
                 transition={{ duration: 7, repeat: Infinity }}
             >
                 <Image
@@ -78,40 +91,41 @@ const MarketSection: React.FC = () => {
                     alt="Asset Selector"
                     width={500}
                     height={300}
-                    className="w-full h-auto"
+                    className="w-full h-auto grayscale opacity-50"
                 />
             </motion.div>
 
-            {/* Bottom Single Grid Image */}
+            {/* Asset Grid Image */}
             <motion.div
-                className="w-full max-w-[824px] sm:mt-12 mt-4 mb-8 z-10"
-                initial={{ opacity: 0, y: 40 }}
+                className="w-full max-w-[540px] sm:mt-10 mt-4 mb-8 z-10"
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.7 }}
                 viewport={{ once: true, amount: 0.3 }}
             >
                 <Image
                     src="/CryptoAssets.svg"
-                    alt="Crypto Assets"
+                    alt="Supported crypto assets on Kaleido Agentic OS"
                     width={500}
                     height={300}
-                    className="w-full h-auto"
+                    className="w-full h-auto drop-shadow-[0_0_30px_rgba(0,255,153,0.1)]"
                 />
             </motion.div>
 
-            <motion.div className="absolute z-[1] w-36 sm:w-[400px] h-[40%] rounded-3xl bg-gradient-to-br from-[#00dd72]/5 to-[#00ff22]/5 top-24 left-4"
+            {/* Background glow effects */}
+            <motion.div className="absolute z-[1] w-36 sm:w-[400px] h-[40%] rounded-3xl bg-gradient-to-br from-[#00ff99]/5 to-[#00dd72]/5 top-24 left-4"
                 animate={{ opacity: [0.5, 1, 0.5], y: [0, 10, 0] }}
                 transition={{ duration: 8, repeat: Infinity }}
             />
-            <motion.div className="absolute z-[0] w-24 sm:w-[200px] h-[20%] rounded-3xl bg-gradient-to-br from-[#00dd72]/5 to-[#00dd72]/5 top-36 left-0"
+            <motion.div className="absolute z-[0] w-24 sm:w-[200px] h-[20%] rounded-3xl bg-gradient-to-br from-[#00ff99]/5 to-[#00dd72]/5 top-36 left-0"
                 animate={{ opacity: [0.4, 0.8, 0.4], x: [0, 20, 0] }}
                 transition={{ duration: 9, repeat: Infinity }}
             />
-            <motion.div className="absolute z-[0] w-10 sm:w-[400px] md:h-[300px] h-10 rounded-xl bg-gradient-to-br from-[#00ff22]/5 to-[#00dd72]/5 top-36 left-0"
+            <motion.div className="absolute z-[0] w-10 sm:w-[400px] md:h-[300px] h-10 rounded-xl bg-gradient-to-br from-[#00dd72]/5 to-[#00ff99]/5 top-36 left-0"
                 animate={{ opacity: [0.3, 0.7, 0.3], y: [0, 15, 0] }}
                 transition={{ duration: 10, repeat: Infinity }}
             />
-            <div className="absolute w-full -bottom-9 h-[500px] bg-gradient-to-b from-[#111714] to-transparent z-[0]" />
+            <div className="absolute w-full -bottom-9 h-[500px] bg-gradient-to-b from-[#080b09] to-transparent z-[0]" />
         </motion.div>
     );
 };

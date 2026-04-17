@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { connectToDatabase } from '@/lib/mongodb';
 
-const ABSTRACT_POINTS = 200; // Points for RT & Comment with #KaleidoKaleido task
+const KALEIDO_POINTS = 200; // Points for RT & Comment with #KaleidoKaleido task
 
 export async function POST(req: Request) {
   try {
@@ -38,11 +38,11 @@ export async function POST(req: Request) {
     const currentBalance = Number(user.balance) || 0;
     
     // Calculate new balance
-    const newBalance = currentBalance + ABSTRACT_POINTS;
+    const newBalance = currentBalance + KALEIDO_POINTS;
 
     // Prevent negative balance
     if (newBalance < currentBalance) {
-      console.error(`Prevented balance decrease for ${wallet}. Current: ${currentBalance}, Update: ${ABSTRACT_POINTS}, New: ${newBalance}`);
+      console.error(`Prevented balance decrease for ${wallet}. Current: ${currentBalance}, Update: ${KALEIDO_POINTS}, New: ${newBalance}`);
       return NextResponse.json({ 
         error: 'Invalid balance update',
         message: 'New balance cannot be less than current balance'
@@ -68,7 +68,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ 
       success: true,
       previousBalance: currentBalance,
-      addedPoints: ABSTRACT_POINTS,
+      addedPoints: KALEIDO_POINTS,
       newBalance
     });
 

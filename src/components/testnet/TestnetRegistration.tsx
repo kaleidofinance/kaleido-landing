@@ -19,7 +19,7 @@ declare global {
 
 const SOCIAL_LINKS = {
   twitter: 'https://x.com/intent/follow?screen_name=kaleido_finance',
-  telegram: 'https://t.me/kaleido_abstract',
+  telegram: 'https://t.me/kaleido_finance',
   discord: 'https://discord.gg/VcegZwwbcC',
 };
 

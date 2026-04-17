@@ -132,6 +132,14 @@
   display: none; /* Chrome, Safari, and Opera */
 }
 
+/* Used by Luca chat window */
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
 .u-class-shadow {
   box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px,
     rgba(255, 255, 255, 0.12) 0px -12px 30px,

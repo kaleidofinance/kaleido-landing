@@ -20,8 +20,8 @@ const HowToBuy: React.FC = () => {
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl font-bold mb-4 text-white">Simple 3-Step Process</h2>
-                    <p className="text-xl text-gray-300 mb-2">Get Started with Kaleido Finance</p>
-                    <p className="text-[#00dd72] font-semibold">Access All DeFi Products in One Platform</p>
+                    <p className="text-xl text-gray-300 mb-2">Get Started with Kaleido Agentic OS</p>
+                    <p className="text-[#00ff99] font-semibold">Connect. Deploy. Earn.</p>
                 </div>
                 
                 <motion.div
@@ -92,7 +92,7 @@ const HowToBuy: React.FC = () => {
                         <div className="hidden md:block absolute top-12 left-full w-32 h-0.5 bg-gradient-to-r from-[#00dd72] to-transparent"></div>
                         
                         <h3 className="text-lg font-bold text-white mb-2">Choose Product</h3>
-                        <p className="text-gray-300 text-sm max-w-xs">Select from lending, trading, staking, stablecoins, or launchpad</p>
+                        <p className="text-gray-300 text-sm max-w-xs">Select from lending, trading, staking, or stablecoins</p>
                     </motion.div>
 
                     {/* Step 3: Start Earning */}
