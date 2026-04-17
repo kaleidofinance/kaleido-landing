@@ -19,7 +19,7 @@ export const navLinks = [
     title: "Roadmap",
   },
   {
-    id: "https://app.kaleidofinance.xyz",
+    id: "https://app.kaleido.xyz",
     title: "Open dApp",
   },
 ];

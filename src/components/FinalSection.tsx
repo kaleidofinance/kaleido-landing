@@ -52,7 +52,7 @@ const FinalSection: React.FC = () => {
                             </div>
                             <div className="flex-1 mx-4">
                                 <div className="h-5 rounded-md bg-white/[0.03] border border-white/[0.04] flex items-center px-3">
-                                    <span className="text-[10px] text-white/20 font-mono">app.kaleidofinance.xyz</span>
+                                    <span className="text-[10px] text-white/20 font-mono">app.kaleido.xyz</span>
                                 </div>
                             </div>
                             <div className="flex items-center gap-1.5">
@@ -84,7 +84,7 @@ const FinalSection: React.FC = () => {
                     viewport={{ once: true }}
                 >
                     <a
-                        href="https://app.kaleidofinance.xyz"
+                        href="https://app.kaleido.xyz"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2.5 px-10 py-4 rounded-xl bg-[#00ff99] text-black text-sm font-bold hover:bg-[#00ff99]/90 transition-all duration-200 shadow-[0_0_30px_rgba(0,255,153,0.3)] hover:shadow-[0_0_50px_rgba(0,255,153,0.5)] group"

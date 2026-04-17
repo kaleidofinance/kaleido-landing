@@ -241,7 +241,7 @@ const FeatureCardGrid = () => {
                 {/* Bottom CTA */}
                 <div className="mt-10 pt-6 border-t border-white/[0.04]">
                   <a
-                    href="https://app.kaleidofinance.xyz"
+                    href="https://app.kaleido.xyz"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-sm font-semibold text-[#00ff99] hover:text-[#00ff99]/80 transition-colors group/link"

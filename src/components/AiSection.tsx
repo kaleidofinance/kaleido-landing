@@ -179,7 +179,7 @@ const AiSection = () => {
             </div>
 
             <motion.a
-              href="https://app.kaleidofinance.xyz"
+              href="https://app.kaleido.xyz"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-10 inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#00ff99] text-black text-sm font-bold hover:bg-[#00ff99]/90 transition-all duration-200 shadow-[0_0_20px_rgba(0,255,153,0.3)] hover:shadow-[0_0_35px_rgba(0,255,153,0.5)] group"

@@ -56,7 +56,7 @@ const MarketSection: React.FC = () => {
                 viewport={{ once: true }}
             >
                 <a
-                    href="https://app.kaleidofinance.xyz"
+                    href="https://app.kaleido.xyz"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#00ff99] text-black text-sm font-bold hover:bg-[#00ff99]/90 transition-all duration-200 shadow-[0_0_25px_rgba(0,255,153,0.3)] hover:shadow-[0_0_40px_rgba(0,255,153,0.5)] group"

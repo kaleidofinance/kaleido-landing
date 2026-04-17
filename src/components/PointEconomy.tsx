@@ -234,7 +234,7 @@ const PointEconomy = () => {
               {/* Footer CTA */}
               <div className="px-5 py-4 bg-black/20">
                 <a
-                  href="https://app.kaleidofinance.xyz/leaderboard"
+                  href="https://app.kaleido.xyz/leaderboard"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl border border-[#00ff99]/20 bg-[#00ff99]/5 text-[#00ff99] text-xs font-semibold hover:bg-[#00ff99]/10 transition-all duration-200"

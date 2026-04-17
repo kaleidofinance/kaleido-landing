@@ -71,7 +71,7 @@ const Navbar = () => {
           {/* CTA */}
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="https://app.kaleidofinance.xyz"
+              href="https://app.kaleido.xyz"
               target="_blank"
               rel="noopener noreferrer"
               className="relative inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-gradient-to-r from-[#00ff99] to-[#00dd72] text-black font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-all duration-300 shadow-[0_0_20px_rgba(0,255,153,0.2)] hover:shadow-[0_0_30px_rgba(0,255,153,0.4)]"
@@ -118,7 +118,7 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="https://app.kaleidofinance.xyz"
+              href="https://app.kaleido.xyz"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 flex items-center justify-center gap-2 w-full py-3 text-sm font-bold text-black bg-[#00ff99] rounded-xl shadow-[0_0_20px_rgba(0,255,153,0.3)]"

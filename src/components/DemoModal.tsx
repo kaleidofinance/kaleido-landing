@@ -538,7 +538,7 @@ const DemoModal: React.FC<DemoModalProps> = ({ open, onOpenChange }) => {
               </div>
               <button
                 onClick={() => {
-                  window.open('https://app.kaleidofinance.xyz', '_blank');
+                  window.open('https://app.kaleido.xyz', '_blank');
                   onOpenChange(false);
                 }}
                 className="px-6 py-3 bg-[#00dd72] hover:bg-[#00dd72]/90 text-black font-bold rounded-lg transition-colors"

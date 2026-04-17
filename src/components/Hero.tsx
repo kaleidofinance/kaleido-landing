@@ -99,7 +99,7 @@ const Hero = () => {
               transition={{ duration: 0.7, delay: 0.5 }}
             >
               <a
-                href="https://app.kaleidofinance.xyz"
+                href="https://app.kaleido.xyz"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#00ff99] text-black font-bold text-sm hover:bg-[#00ff99]/90 transition-all duration-200 shadow-[0_0_25px_rgba(0,255,153,0.4)] hover:shadow-[0_0_40px_rgba(0,255,153,0.6)]"
