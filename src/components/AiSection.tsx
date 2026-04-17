@@ -157,23 +157,23 @@ const AiSection = () => {
               protocol stack.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mt-8">
               {CAPABILITIES.map((cap, i) => (
                 <motion.div
                   key={cap.title}
-                  className="p-4 rounded-xl border border-white/[0.03] bg-white/[0.02] hover:bg-white/[0.04] hover:border-[#00ff99]/20 transition-all duration-300 group"
+                  className="p-3 rounded-xl border border-white/[0.03] bg-white/[0.02] hover:bg-white/[0.04] hover:border-[#00ff99]/20 transition-all duration-300 group"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.5 }}
                 >
-                  <div className="mb-3 inline-flex p-2 rounded-lg border border-[#00ff99]/20 bg-[#00ff99]/5 group-hover:border-[#00ff99]/40 group-hover:bg-[#00ff99]/10 transition-all duration-300 group-hover:scale-105 shadow-[0_0_10px_rgba(0,255,153,0.05)]">
-                    <cap.icon className="w-4 h-4 text-[#00ff99]" />
+                  <div className="flex items-center gap-2.5 mb-2">
+                    <div className="shrink-0 p-1.5 rounded-lg border border-[#00ff99]/20 bg-[#00ff99]/5 group-hover:border-[#00ff99]/40 group-hover:bg-[#00ff99]/10 transition-all duration-300 group-hover:scale-105 shadow-[0_0_10px_rgba(0,255,153,0.05)]">
+                      <cap.icon className="w-3.5 h-3.5 text-[#00ff99]" />
+                    </div>
+                    <h4 className="text-[11px] font-bold text-white group-hover:text-[#00ff99] transition-colors">{cap.title}</h4>
                   </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-white mb-1 group-hover:text-[#00ff99] transition-colors">{cap.title}</h4>
-                    <p className="text-[10px] text-white/40 leading-relaxed">{cap.desc}</p>
-                  </div>
+                  <p className="text-[9px] text-white/40 leading-relaxed uppercase tracking-tighter pl-0.5">{cap.desc}</p>
                 </motion.div>
               ))}
             </div>
