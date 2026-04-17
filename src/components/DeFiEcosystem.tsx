@@ -118,7 +118,7 @@ const DeFiEcosystem: React.FC = () => {
 
   return (
     <motion.section
-      className="py-20 px-8 sm:px-12 lg:px-16 xl:px-20"
+      className="bg-[#080b09] py-20 px-8 sm:px-12 lg:px-16 xl:px-20 relative overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}

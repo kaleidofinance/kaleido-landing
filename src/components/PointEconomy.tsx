@@ -45,7 +45,7 @@ const LEADERS = [
 
 const PointEconomy = () => {
   return (
-    <section className="relative py-16 px-6 md:px-10 overflow-hidden">
+    <section className="relative bg-[#080b09] py-16 px-6 md:px-10 overflow-hidden w-full">
       {/* Background */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#00ff99]/3 rounded-full blur-[120px] pointer-events-none" />
 

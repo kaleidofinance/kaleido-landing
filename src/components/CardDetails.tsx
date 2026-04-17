@@ -5,7 +5,7 @@ import { GlassCard } from './GlassCard';
 
 const CardDetails = () => {
   return (
-    <section className="py-24 px-6 md:px-10">
+    <section className="bg-[#080b09] py-24 px-6 md:px-10 w-full relative overflow-hidden">
       <div className="max-w-7xl mx-auto text-center">
         <div className="flex items-center justify-center gap-2 mb-4">
           <span className="h-px w-8 bg-[#00ff99]/40" />

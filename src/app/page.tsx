@@ -70,26 +70,14 @@ export default function Home() {
         <Hero />
 
         {/* DeFi Ecosystem */}
-        <div className="md:max-w-[94%] m-auto">
-          <div className="px-6 flex justify-center items-center">
-            <div className="xl:max-w-[1440px] w-full">
-              <DeFiEcosystem />
-            </div>
-          </div>
-        </div>
-
+        <DeFiEcosystem />
+ 
         <HowToBuy />
         <FeatureCardGrid />
         <AiSection />
         <PointEconomy />
-
-        <div className="md:max-w-[94%] m-auto">
-          <div className="px-6 flex justify-center items-center">
-            <div className="xl:max-w-[1440px] w-full">
-              <CardDetails />
-            </div>
-          </div>
-        </div>
+ 
+        <CardDetails />
 
         <MarketSection />
         <FinalSection />

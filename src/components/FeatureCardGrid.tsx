@@ -69,7 +69,7 @@ const FeatureCardGrid = () => {
   const selected = MODULES[active];
 
   return (
-    <section className="relative py-16 px-6 md:px-10 overflow-hidden">
+    <section className="relative bg-[#080b09] py-16 px-6 md:px-10 overflow-hidden w-full">
       {/* Ambient glow */}
       <div className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#00ff99]/3 rounded-full blur-[140px] pointer-events-none" />
 

@@ -114,7 +114,7 @@ const AiSection = () => {
   const displayed = DEMO_CONVERSATION.slice(0, visibleCount);
 
   return (
-    <section className="relative py-16 px-6 md:px-10 overflow-hidden">
+    <section className="relative bg-[#080b09] py-16 px-6 md:px-10 overflow-hidden w-full">
       {/* Background glow */}
       <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#00ff99]/4 rounded-full blur-[100px] pointer-events-none" />
 

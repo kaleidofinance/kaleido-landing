@@ -7,7 +7,7 @@ import { ArrowRight } from 'lucide-react';
 const MarketSection: React.FC = () => {
     return (
         <motion.div
-            className="bg-[#080b09] flex flex-col items-center text-center px-4 relative pt-16 pb-4"
+            className="bg-[#080b09] flex flex-col items-center text-center px-4 relative pt-16 pb-4 w-full overflow-hidden"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
