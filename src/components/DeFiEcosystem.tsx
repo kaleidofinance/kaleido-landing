@@ -104,6 +104,21 @@ const DeFiEcosystem: React.FC = () => {
       ],
       action: "Stake Now",
       icon: "S"
+    },
+    {
+      id: "aegis-security",
+      title: "Aegis Sentinel",
+      description: "Real-time protocol auditing and automated exploit prevention protecting all Kaleido OS modules",
+      apy: "99.9%",
+      points: "Security · 24/7 Guard",
+      metrics: [
+        { label: "Threats Stopped", value: "48" },
+        { label: "Risk Score", value: "AA+" },
+        { label: "Active Guards", value: "1,250" },
+        { label: "Coverage", value: "Omni" }
+      ],
+      action: "Protect Liquidity",
+      icon: "A"
     }
   ];
 

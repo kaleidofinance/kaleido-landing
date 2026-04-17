@@ -62,6 +62,16 @@ const MODULES = [
     features: ["Multi-Collateral", "1:1 Peg", "kafUSD Vault", "Yield Engine"],
     accent: "#00ff99",
   },
+  {
+    id: "aegis",
+    icon: ShieldCheck,
+    title: "Aegis Sentinel",
+    tag: "Security Layer",
+    short: "Real-time threat protection",
+    desc: "The protective layer of the Agentic OS. Aegis monitors global on-chain patterns and protocol health to detect and intercept exploits before they hit your positions.",
+    features: ["Exploit Guard", "Automated Pause", "Liquidity Shield", "Honey-pot Scan"],
+    accent: "#00ff99",
+  },
 ];
 
 const FeatureCardGrid = () => {
