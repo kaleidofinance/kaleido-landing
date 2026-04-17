@@ -108,10 +108,12 @@ const Hero = () => {
                 <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
               <a
-                href="/leaderboard"
+                href="https://kaleidos-finance.gitbook.io/kaleido/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border border-white/10 bg-white/5 text-white font-semibold text-sm hover:border-[#00ff99]/30 hover:bg-[#00ff99]/5 transition-all duration-200"
               >
-                View Leaderboard
+                Read Docs
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
             </motion.div>

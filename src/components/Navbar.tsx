@@ -7,7 +7,6 @@ import { ExternalLink, Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
   { label: "Docs", href: "https://kaleidos-finance.gitbook.io/kaleido/", external: true },
-  { label: "Leaderboard", href: "/leaderboard", external: false },
   { label: "Ecosystem", href: "https://kaleidos-finance.gitbook.io/kaleido/", external: true },
   { label: "Governance", href: "https://kaleidos-finance.gitbook.io/kaleido/", external: true },
   { label: "Roadmap", href: "/roadmap", external: false },
