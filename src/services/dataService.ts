@@ -1,9 +1,9 @@
 import { authService } from './authService';
 import { premiumAuthService } from './premiumAuthService';
-import { DailyQuiz } from '@/types/quiz';
-import { Task } from '@/lib/mysql';
-import { fetchWithRetry, getFallbackData } from '@/utils/apiHelpers';
-import { checkRateLimit, waitForRateLimit } from '@/utils/rateLimiter';
+import { DailyQuiz } from '../types/quiz';
+import { Task } from '../lib/mysql';
+import { fetchWithRetry, getFallbackData } from '../utils/apiHelpers';
+import { checkRateLimit, waitForRateLimit } from '../utils/rateLimiter';
 
 export interface UserPoints {
   quiz_points: number;

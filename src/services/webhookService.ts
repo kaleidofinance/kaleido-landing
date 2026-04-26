@@ -1,5 +1,5 @@
 import { authService } from './authService';
-import { fetchWithRetry, getFallbackData } from '@/utils/apiHelpers';
+import { fetchWithRetry, getFallbackData } from '../utils/apiHelpers';
 
 // Define the response types
 interface WebhookRegistrationResponse {
