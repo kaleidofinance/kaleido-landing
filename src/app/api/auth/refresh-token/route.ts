@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import jwt from 'jsonwebtoken';
 import { connectToDatabase } from "@/lib/mongodb";
 
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
@@ -10,6 +9,9 @@ export const dynamic = 'force-dynamic';
 
 export async function GET(request: NextRequest) {
   try {
+    // Lazy load jsonwebtoken to avoid build-time prototype errors
+    const jwt = await import('jsonwebtoken');
+    
     // Get the wallet parameter from the search params
     const wallet = request.nextUrl.searchParams.get('wallet');
     

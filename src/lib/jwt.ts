@@ -1,4 +1,5 @@
-import jwt from 'jsonwebtoken';
+// Lazy load jsonwebtoken to avoid build-time prototype errors
+const getJwt = async () => await import('jsonwebtoken');
 
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
 
@@ -18,9 +19,11 @@ export interface JWTPayload {
  */
 export async function verifyToken(token: string): Promise<JWTPayload> {
   try {
+    const jwt = await getJwt();
     const decoded = jwt.verify(token, JWT_SECRET) as JWTPayload;
     return decoded;
-  } catch (error) {
+  } catch (error: any) {
+    const jwt = await getJwt();
     if (error instanceof jwt.TokenExpiredError) {
       throw new Error('Token has expired');
     }
@@ -38,5 +41,6 @@ export async function verifyToken(token: string): Promise<JWTPayload> {
  * @returns The signed JWT token
  */
 export async function createToken(payload: Omit<JWTPayload, 'iat' | 'exp'>, expiresIn: string = '24h'): Promise<string> {
+  const jwt = await getJwt();
   return jwt.sign(payload, JWT_SECRET, { expiresIn });
 }

@@ -1,7 +1,7 @@
 import { Db, MongoClient, MongoClientOptions, Collection, Document, IndexDescription } from 'mongodb';
 
 if (!process.env.MONGODB_URI) {
-  throw new Error('Please add your MongoDB URI to .env.local');
+  console.warn('⚠️ Warning: MONGODB_URI is missing from environment variables');
 }
 
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -56,6 +56,9 @@ async function connectToDatabase() {
   }
 
   if (!global._mongoCache[cacheKey] || !global._mongoCache[cacheKey].conn) {
+    if (!MONGODB_URI) {
+      throw new Error('MONGODB_URI is not defined');
+    }
     global._mongoCache[cacheKey] = {
       conn: MongoClient.connect(MONGODB_URI, options).then((client) => {
         const db = client.db('kaleido');
@@ -191,7 +194,8 @@ async function ensureIndexes(collection: Collection<Document>) {
 }
 
 // Create a separate client promise for routes that need it directly
-const client = new MongoClient(MONGODB_URI, options);
-const clientPromise = client.connect();
+const clientPromise = MONGODB_URI 
+  ? new MongoClient(MONGODB_URI, options).connect()
+  : Promise.reject(new Error('MONGODB_URI is not defined'));
 
 export { clientPromise, connectToDatabase };

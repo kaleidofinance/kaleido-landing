@@ -81,7 +81,7 @@ export async function getLeaderboard(walletAddress: string, limit: number = 20):
   const connection = await pool.getConnection();
   try {
     // Get all users with points from user_points table
-    const [allUsers] = await connection.query<RowDataPacket[]>(`
+    const [allUsers]: any[] = await (connection.query as any)(`
       SELECT DISTINCT user_id FROM user_points
     `);
     
