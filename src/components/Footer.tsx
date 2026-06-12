@@ -40,10 +40,10 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <h4 className="text-[10px] font-bold tracking-widest uppercase text-white/25 mb-4">Protocol</h4>
             <ul className="space-y-2.5">
-              <li><a href="https://app.kaleido.xyz" target="_blank" rel="noopener noreferrer" className="text-sm text-white/40 hover:text-[#00ff99] transition-colors">Lending</a></li>
-              <li><a href="https://app.kaleido.xyz" target="_blank" rel="noopener noreferrer" className="text-sm text-white/40 hover:text-[#00ff99] transition-colors">Omni-Pool DEX</a></li>
-              <li><a href="https://app.kaleido.xyz" target="_blank" rel="noopener noreferrer" className="text-sm text-white/40 hover:text-[#00ff99] transition-colors">KLD Staking</a></li>
-              <li><a href="https://app.kaleido.xyz" target="_blank" rel="noopener noreferrer" className="text-sm text-white/40 hover:text-[#00ff99] transition-colors">kfUSD Vault</a></li>
+              <li><a href="https://app.kaleidofi.xyz" target="_blank" rel="noopener noreferrer" className="text-sm text-white/40 hover:text-[#00ff99] transition-colors">Lending</a></li>
+              <li><a href="https://app.kaleidofi.xyz" target="_blank" rel="noopener noreferrer" className="text-sm text-white/40 hover:text-[#00ff99] transition-colors">Omni-Pool DEX</a></li>
+              <li><a href="https://app.kaleidofi.xyz" target="_blank" rel="noopener noreferrer" className="text-sm text-white/40 hover:text-[#00ff99] transition-colors">KLD Staking</a></li>
+              <li><a href="https://app.kaleidofi.xyz" target="_blank" rel="noopener noreferrer" className="text-sm text-white/40 hover:text-[#00ff99] transition-colors">kfUSD Vault</a></li>
             </ul>
           </div>
  
