@@ -17,6 +17,7 @@ const TERMINAL_LINES = [
   { prefix: "sys >", text: "point guard: capital gate ✓ verified", delay: 2.6 },
   { prefix: "luca>", text: "✓ Successfully swap 500 USDC → 2000 KLD", delay: 3.2},
   { prefix: "sys >", text: "✓ Added 500 USDC/2000 KLD to KLD/ETH pool", delay: 3.6 },
+];
 
 const Hero = () => {
   return (
