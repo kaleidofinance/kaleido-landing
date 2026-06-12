@@ -15,7 +15,7 @@ const TERMINAL_LINES = [
   { prefix: "sys >", text: "indexing volume... $500 = 500 pts", delay: 1.4 },
   { prefix: "luca>", text: "LP position opened on KLD/ETH pool", delay: 2.0 },
   { prefix: "sys >", text: "point guard: capital gate ✓ verified", delay: 2.6 },
-];
+  { prefix: "luca>", text: "✓ NowSDC to 10000 Successfully", delay: 3.2},
 
 const Hero = () => {
   return (
@@ -50,9 +50,8 @@ const Hero = () => {
               className="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full border border-[#00ff99]/20 bg-[#00ff99]/5 backdrop-blur-sm"
             >
               <span className="flex h-2 w-2 rounded-full bg-[#00ff99] animate-pulse" />
-              <span className="text-xs font-semibold text-[#00ff99] tracking-widest uppercase">
-                Agentic Era · Now Live
-              </span>
+              <span className="texAgenticxt-[#00ff99] tracking-widest uppercase">
+                DeFi Agentic Era · Now Live            </span>
             </motion.div>
 
             {/* Headline */}
@@ -99,12 +98,12 @@ const Hero = () => {
               transition={{ duration: 0.7, delay: 0.5 }}
             >
               <a
-                href="https://app.kaleido.xyz"
+                href="https://app.kaleidofi.xyz"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#00ff99] text-black font-bold text-sm hover:bg-[#00ff99]/90 transition-all duration-200 shadow-[0_0_25px_rgba(0,255,153,0.4)] hover:shadow-[0_0_40px_rgba(0,255,153,0.6)]"
               >
-                Launch the OS
+                Launch KaleidoOS
                 <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
               <a
