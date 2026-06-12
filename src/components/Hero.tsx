@@ -15,7 +15,7 @@ const TERMINAL_LINES = [
   { prefix: "sys >", text: "indexing volume... $500 = 500 pts", delay: 1.4 },
   { prefix: "luca>", text: "LP position opened on KLD/ETH pool", delay: 2.0 },
   { prefix: "sys >", text: "point guard: capital gate ✓ verified", delay: 2.6 },
-  { prefix: "luca>", text: "✓ NowSDC to 10000 Successfully", delay: 3.2},
+  { prefix: "luca>", text: "✓ Successfully swap 500 USDC → 2000 KLD", delay: 3.2},
 
 const Hero = () => {
   return (
