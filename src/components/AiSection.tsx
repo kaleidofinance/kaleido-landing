@@ -74,7 +74,7 @@ const AiSection = () => {
   const [showTyping, setShowTyping] = useState(false);
   const [inputVal, setInputVal] = useState("");
   const [started, setStarted] = useState(false);
-  const bottomRef = useRef<HTMLDivElement>(null);
+  const messagesRef = useRef<HTMLDivElement>(null);
 
   // Run the demo when user clicks "See it in action"
   useEffect(() => {
@@ -106,10 +106,15 @@ const AiSection = () => {
     schedule(DEMO_CONVERSATION);
   }, [started]);
 
-  // Auto-scroll
+  // Keep auto-scroll scoped to the chat panel so it cannot move the landing page.
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [visibleCount, showTyping]);
+    if (!started || !messagesRef.current) return;
+
+    messagesRef.current.scrollTo({
+      top: messagesRef.current.scrollHeight,
+      behavior: "smooth",
+    });
+  }, [started, visibleCount, showTyping]);
 
   const displayed = DEMO_CONVERSATION.slice(0, visibleCount);
 
@@ -217,7 +222,7 @@ const AiSection = () => {
               </div>
 
               {/* Messages */}
-              <div className="p-5 space-y-4 min-h-[320px] max-h-[380px] overflow-y-auto scrollbar-none">
+              <div ref={messagesRef} className="p-5 space-y-4 min-h-[320px] max-h-[380px] overflow-y-auto scrollbar-none">
                 {/* Initial greeting */}
                 <motion.div
                   className="flex gap-2.5"
@@ -281,7 +286,6 @@ const AiSection = () => {
                     </motion.div>
                   )}
                 </AnimatePresence>
-                <div ref={bottomRef} />
               </div>
 
               {/* Input bar */}

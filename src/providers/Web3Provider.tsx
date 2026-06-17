@@ -55,12 +55,14 @@ export const Web3Provider = ({ children }: { children: React.ReactNode }) => {
   };
 
   // Function to check if MetaMask is installed
-  const checkIfMetaMaskInstalled = (): boolean => {
+  const checkIfMetaMaskInstalled = (showToast = true): boolean => {
     if (typeof window === 'undefined') return false;
     
     const { ethereum } = window;
     if (!ethereum || !ethereum.isMetaMask) {
-      toast.error('Please install MetaMask to continue');
+      if (showToast) {
+        toast.error('Please install MetaMask to continue');
+      }
       return false;
     }
     return true;
@@ -301,7 +303,7 @@ export const Web3Provider = ({ children }: { children: React.ReactNode }) => {
     if (typeof window === 'undefined') return;
 
     const setupWeb3 = async () => {
-      if (!checkIfMetaMaskInstalled()) return;
+      if (!checkIfMetaMaskInstalled(false)) return;
 
       const { ethereum } = window;
       if (!ethereum) return;
